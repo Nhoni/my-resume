@@ -7,7 +7,7 @@ const projects = [
     {
         id: 1,
         title: 'Cinemax',
-        imageUrl: 'public\media\Cinemax.jpg',
+        imageUrl: 'public\media\Cinemax.jpeg',
         description: 'Cinemax est une app de recherche de film et permet d\'ajouter une sélection en favoris.',
         siteUrl: 'https://cinemax-inky.vercel.app/',
     },

@@ -1,4 +1,7 @@
 import React, { useEffect } from 'react';
+import Nav from '../Components/Nav';
+import Footer from '../Components/Footer';
+
 
 function animateProgressBar(progress) {
   const targetValue = parseInt(progress.getAttribute('value'));
@@ -66,9 +69,13 @@ function Skills() {
   }, []);
 
   return (
-    <div className="content_competences" id="competences">
+    <>
+      <header>
+        <Nav />
+      </header>
+            <div className="content_competences" id="competences">
       <div className="competences-section">
-        <div className='content'> 
+        <div className='content'>
 
           <div>
             <h2>Expériences</h2>
@@ -102,7 +109,7 @@ function Skills() {
               Télécharger mon cv
             </button>
           </a>
-      </div>
+        </div>
         <div id="bar_front" className="skill-bars">
           {competencesData.map((categoryData, index) => (
             <div key={index}>
@@ -122,7 +129,12 @@ function Skills() {
         </div>
       </div>
     </div>
+    <footer>
+        <Footer />
+      </footer>
+      </>
   );
+  
 }
 
 export default Skills;
