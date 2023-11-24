@@ -59,9 +59,14 @@ function Form() {
           <button type="submit">Envoyer</button>
 
           <div className="foot_form">
-            <p>
-            <Icon icon="material-symbols:mail" color="white" width="24" />Mail: nhmbemba@gmail.com
-            </p>
+            <span>
+            <Icon icon="gg:mail" color="white" width="24" /> Mail: nhmbemba@gmail.com
+            </span>
+          </div>
+          <div className="icon-outline">
+          <a style={{marginRight:'1rem'}} href="https://www.linkedin.com/in/nhora-mbemba-b878b2207" target="_blank"><Icon icon="simple-icons:linkedin" color="white" width="32" /></a>
+          <a  href="https://github.com/Nhoni" target="_blank"><Icon icon="mdi:github" color="white" width="32" /></a>
+
           </div>
         </form>
       </div>
