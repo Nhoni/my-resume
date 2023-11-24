@@ -1,44 +1,75 @@
 import About from "../Components/About";
 import Footer from "../Components/Footer";
 import Nav from "../Components/Nav";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+
+
+function TypeEffect({ text, speed }) {
+  const [displayedText, setDisplayedText] = useState("");
+
+  useEffect(() => {
+    let i = 0;
+    const timer = setInterval(() => {
+      if (i < text.length) {
+        setDisplayedText((prevText) => prevText + text.charAt(i));
+        i++;
+      } else {
+        clearInterval(timer);
+      }
+    }, speed);
+
+    return () => clearInterval(timer); 
+  }, [text, speed]);
+
+  return <span>{displayedText}</span>;
+}
 
 function Home() {
-    const [afficherAccueil, setAfficherAccueil] = useState(true);
-    const basculerSection = () => {
-    setAfficherAccueil(!afficherAccueil)};
+  const [afficherAccueil, setAfficherAccueil] = useState(true);
+  const headerText = "MBEMBA Nhora ";
+  const bodyText = "Conceptrice Développeuse d'Applications junior";
+  const speed = 80;
 
-    return (
-     
+  const toggleSection = () => {
+    setAfficherAccueil(!afficherAccueil);
+  };
+
+  return (
     <>
       <header>
-          <Nav />
+        <Nav />
       </header>
 
       <main>
-              {afficherAccueil ? (
-                <div className="content_acc" id="accueil">
-                  <div className="acceuil-section">
-                    <div className="accueil-content">
-                      <h1>MBEMBA Nhora</h1>
-                      <p className="text_accueil"> Conceptrice Développeuse d'Applications junior</p>
-                      <button onClick={basculerSection} className="roll-button">
-                        Qui suis-je ?
-                      </button>
-                    </div>
+        {afficherAccueil ? (
+          <div className="content-acc" id="accueil">
+            <div className="acceuil-section">
+              <div className="accueil-content">
+                <div id="table">
+                  <h1>
+                    <TypeEffect text={headerText} speed={speed} />
+                  </h1>
+                  <div id="center-align">
+                    <TypeEffect text={bodyText} speed={speed} />
+                    <span className="typed-cursor"></span>
                   </div>
+                  <button onClick={toggleSection} className="roll-button">
+                    Qui suis-je ?
+                  </button>
                 </div>
-              ) : (
-                <About />
-              )}
+              </div>
+            </div>
+          </div>
+        ) : (
+          <About />
+        )}
       </main>
-      
+
       <footer>
-          <Footer />
+        <Footer />
       </footer>
     </>
-    
-  )
+  );
 }
 
-export default Home
+export default Home;

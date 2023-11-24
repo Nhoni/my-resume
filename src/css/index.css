@@ -19,9 +19,9 @@ body {
 h1 {
   text-align: center;
   color: #ffffff;
-  font-size: 2em;
   margin-bottom: 20px;
   margin-top: 0;
+  font-size: 2em;
 }
 
 
@@ -211,11 +211,6 @@ a:hover {
 
 
 /*------------------------------------------------------ Accueil -------------------------------------------------------- */
-
-.acceuil-section {
-  height: 100vh;
-}
-
 #accueil {
   display: flex;
   justify-content: center;
@@ -227,35 +222,8 @@ a:hover {
   flex-direction: column;
 }
 
-.content_acc {
-  color: #fff;
-  text-align: center;
-  background-size: cover;
-}
-
-.text_accueil {
-  font-weight: 300;
-  color: #f3900ec7;
-}
-
-.roll-button {
-  border: none;
-  text-decoration: none;
-  position: relative;
-  display: inline-block;
-  font-family: "Raleway", sans-serif;
-  color: #fff;
-  text-transform: uppercase;
-  border-radius: 3px;
-  transition: all 0.3s;
-}
-
 .accueil-content {
   max-width: 100%;
-}
-
-.roll-button:hover {
-  background-color: gold;
 }
 
 .acceuil-section {
@@ -271,7 +239,7 @@ a:hover {
   animation: apparitionTexte 3s forwards;
   background: url('../../public/media/home-bgi.jpg') no-repeat;
   background-size: cover;
-  
+  font-size: 1.5em;
 }
 
 .acceuil-section:hover {
@@ -279,32 +247,57 @@ a:hover {
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
 }
 
-
-
-/* Mobile */
-@media screen and (max-width: 475px) {
-  
+.typed-cursor {
+  display: inline-block;
+  width: 1px;
+  height: 1em;
+  background-color: #000;
+  animation: blinkCursor 1s step-end infinite;
 }
 
-
-@media screen and (min-width: 361px) and (max-width: 607px) {
-  .acceuil-section {
-    padding: 20px;
+@keyframes blinkCursor {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
   }
 }
 
-
-@media screen and (min-width: 668px) and (max-width: 720px) {
-  .acceuil-section {
-    padding: 20px;
-  }
+.content_acc {
+  color: #fff;
+  text-align: center;
+  background-size: cover;
+  height: 100vh;
+  font-size: 1.5em;
 }
 
-/* Tablets */
-@media (max-width: 768px) {
-  .acceuil-section {
-    height: 100vh;
-    padding: 20px;
+.roll-button {
+  border: none;
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+  font-family: "Raleway", sans-serif;
+  color: #fff;
+  text-transform: uppercase;
+  border-radius: 3px;
+  transition: all 0.3s;
+}
+
+.roll-button:hover {
+  background-color: gold;
+}
+
+.text_accueil {
+  color: #f3900ec7;
+}
+
+@keyframes apparitionTexte {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 
@@ -316,15 +309,40 @@ a:hover {
   }
 }
 
-@keyframes apparitionTexte {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
+/* Tablets and larger screens */
+@media (min-width: 768px) {
+  .acceuil-section {
+    width: 32em;
   }
 }
+
+@media (min-width: 425px) {
+  .acceuil-section {
+    width: 19em;
+  }
+}
+
+@media (min-width: 375px) {
+  .acceuil-section {
+    width: 17em;
+  }
+}
+
+@media (min-width: 320px) {
+  .acceuil-section {
+    width: 15em;
+  }
+}
+
+/* Tablets and larger screens */
+@media (max-width: 768px) {
+  .acceuil-section {
+    height: 100vh;
+    padding: 20px;
+  }
+}
+
+
 
 
 /*---------------------------------------------------- A propos ------------------------------------------------*/
@@ -728,6 +746,9 @@ progress::-webkit-progress-value {
   position: relative;
 }
 
+#close, .close-btn{
+  margin-left: 16em;
+}
 
 /* Tablets */
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -747,8 +768,10 @@ progress::-webkit-progress-value {
     display: flex;
     flex-direction: column;
     align-items: center;
-  
   }
+  #close, .close-btn{
+    margin-left: 40em;
+}
 }
 
 /* Desktops */
@@ -772,6 +795,9 @@ progress::-webkit-progress-value {
   .btn-portfolio {
     width: 100px;
   }
+  #close, .close-btn{
+      margin-left: 56em;
+  }
   .content-project {
     margin-bottom: 1rem;
     margin-left: 2rem;
@@ -783,8 +809,15 @@ progress::-webkit-progress-value {
     align-items: center;
     gap: 1rem;
   }
+  .close-btn{
+    margin-left: 56em;
+  }
 }
 
+@media (min-width: 1440px){
+#close, .close-btn {
+    margin-left: 82em;}
+}
 /*------------------------------------------------------ Formulaire -------------------------------------------------------- */
 
 .container-form {

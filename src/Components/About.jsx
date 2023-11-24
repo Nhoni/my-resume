@@ -4,7 +4,7 @@ function About() {
     return (
         <>
          <div className="content_apropos" id="a-propos">
-          <h2>A propos de moi</h2>
+          <h1>A propos de moi</h1>
           <div className="apropos-section">
             <div className="photos-p">
               <img src="/media/ma_photos.jpg" alt="photos-de-profil-mbemba-nhora" style={{ height: '300px' }} />

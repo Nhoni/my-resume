@@ -88,9 +88,9 @@ const Portfolio = () => {
                     {selectedProject && detailsVisible && (
                 <div className="project-details-overlay">
                     <div className="project-details">
-                        <button className="close-btn" onClick={closeDetails}>
-                            <Icon name="close-outline" fill="#fff" size="large" />
-                            Close
+                        <button className="close-btn" id="close" onClick={closeDetails}>
+                            
+                        <Icon icon="ep:close-bold" color="white" width="12" />
                         </button>
 
                         <h2>{selectedProject.title}</h2>

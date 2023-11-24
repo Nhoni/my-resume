@@ -74,9 +74,11 @@ function Skills() {
         <Nav />
       </header>
             <div className="content_competences" id="competences">
+              <h1 style={{textAlign:'center'}}>Compétences</h1>
       <div className="competences-section">
+        
         <div className='content'>
-
+        
           <div>
             <h2>Expériences</h2>
             <ul>

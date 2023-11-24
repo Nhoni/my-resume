@@ -12,7 +12,7 @@ function Contact() {
 
       <main>
           <div className='container-form'>
-            <h2>Contact</h2>
+            <h1>Contact</h1>
               <Form />
           </div>
       </main>
