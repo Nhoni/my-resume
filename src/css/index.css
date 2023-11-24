@@ -269,8 +269,8 @@ a:hover {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
   transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
   animation: apparitionTexte 3s forwards;
-  /* background: url('public/media/pexels-negative-space-160107.jpg') no-repeat center center fixed;
-  background-size: cover; */
+  background: url('../../public/media/home-bgi.jpg') no-repeat;
+  background-size: cover;
   
 }
 

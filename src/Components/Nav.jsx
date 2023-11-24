@@ -13,7 +13,7 @@ function Nav() {
       <div className={`navbar ${isMenuOpen ? 'open' : ''}`}>
         <div className="logo">
           <Link to="/">
-            <img src="public\media\logo_p.jpg"
+            <img src="media/logo_p.jpg"
             alt="Logo portfolio" style={{ height: '50px' }} />
           </Link>
         </div>

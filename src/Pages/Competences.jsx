@@ -104,7 +104,7 @@ function Skills() {
             </ul>
           </div>
 
-          <a href="src\assets\img\ressources\MBEMBA_Nhora_Developpeuse_d'application_multimédia.pdf" download="">
+          <a href="media/MBEMBA_Nhora_Developpeuse_d'application_multimédia.pdf" download="">
             <button className="roll-button" type="button">
               Télécharger mon cv
             </button>

@@ -7,7 +7,7 @@ function About() {
           <h2>A propos de moi</h2>
           <div className="apropos-section">
             <div className="photos-p">
-              <img src="public\media\ma_photos.jpg" alt="Mbemba Nhora" style={{ height: '300px' }} />
+              <img src="/media/ma_photos.jpg" alt="photos-de-profil-mbemba-nhora" style={{ height: '300px' }} />
             </div>
             <p>
               J’ai suivi la formation développeur d'applications multimédias au sein du centre de formation{' '}
