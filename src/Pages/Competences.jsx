@@ -74,7 +74,7 @@ function Skills() {
         <Nav />
       </header>
 
-      <main>
+        <main>
             <div className="content_competences" id="competences">
               <h1 style={{textAlign:'center'}}>Compétences</h1>
       <div className="competences-section">
@@ -133,8 +133,8 @@ function Skills() {
         </div>
       </div>
       </div>
-      </main>
-
+        </main>
+        
       <footer>
         <Footer />
       </footer>

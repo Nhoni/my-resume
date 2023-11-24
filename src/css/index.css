@@ -422,21 +422,25 @@ a:hover {
 
 
 /*------------------------------------------------------ Compétences -------------------------------------------------------- */
+
 h2 {
   font-size: 36px;
   margin-bottom: 20px;
   text-align: center;
+  color: #ffffff; 
 }
 
 li {
   font-size: 18px;
   margin-bottom: 10px;
+  color: #fff; 
 }
 
 ul {
   list-style-type: none;
   padding: 0;
 }
+
 
 .content {
   margin-left: 6rem;
@@ -446,6 +450,7 @@ ul {
   flex-direction: column;
   align-items: center;
 }
+
 
 .competences-section {
   display: flex;
@@ -460,7 +465,9 @@ ul {
   flex-direction: column;
   justify-content: center;
   margin-top: 2rem;
+  border-radius: 10px;
 }
+
 
 .skills-category {
   flex: 1;
@@ -470,6 +477,7 @@ ul {
 .skills-category h2 {
   font-size: 24px;
   margin-bottom: 15px;
+  color: #406493;
 }
 
 .skills-category ul {
@@ -500,30 +508,46 @@ ul {
 #bar_front label {
   font-size: 18px;
   margin-bottom: 8px;
+  color: #eeeeee;
 }
 
-#bar_front progress {
+
+.progress-container {
   width: 100%;
   height: 20px;
   margin-bottom: 10px;
+  background-color: #10131a; 
+  border-radius: 10px;
+  overflow: hidden;
 }
+
+.progress-bar {
+  height: 100%;
+  width: 50%; 
+  background: linear-gradient(to right, #00fd8b, #0eabf3, #0e84f3);
+  transition: width 1s; 
+}
+
+
+
 
 progress {
   width: 100%;
   height: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #6effb7;
   border-radius: 5px;
-  background-color: #f0f0f0;
+  background-color: #10131a; 
 }
 
 progress::-webkit-progress-value {
   background-image: linear-gradient(to right, #00fd8b, #0eabf3, #0e84f3);
 }
 
+
 .roll-button {
-  background-color: goldenrod;
+  background-color: goldenrod; 
   box-shadow: #343434b2 2px 2px 1px;
-  color: #fff;
+  color: #10131a;
   padding: 15px 10px;
   font-size: 18px;
   text-decoration: none;
@@ -534,8 +558,9 @@ progress::-webkit-progress-value {
 }
 
 .content .roll-button:hover {
-  background-color: #45a06f;
+  background-color: gold;
 }
+
 
 @media (max-width: 768px) {
   .content,
@@ -557,7 +582,7 @@ progress::-webkit-progress-value {
     height: auto;
   }
 
-  h1{
+  h1 {
     font-size: 24px;
   }
 
