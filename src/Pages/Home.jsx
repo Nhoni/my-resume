@@ -41,6 +41,11 @@ function Home() {
       </header>
 
       <main>
+      <div id="loading-mask">
+        <div class="loading-img">
+            <img alt="Meghna Preloader" src="img/Pacman.gif" />
+        </div>
+    </div>
         {afficherAccueil ? (
           <div className="content-acc" id="accueil">
             <div className="acceuil-section">
@@ -50,7 +55,7 @@ function Home() {
                     <TypeEffect text={headerText} speed={speed} />
                   </h1>
                   <div id="center-align">
-                    <TypeEffect text={bodyText} speed={speed} />
+                    <TypeEffect  text={bodyText} speed={speed} />
                     <span className="typed-cursor"></span>
                   </div>
                   <button onClick={toggleSection} className="roll-button">
