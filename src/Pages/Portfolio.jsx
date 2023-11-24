@@ -71,7 +71,7 @@ const Portfolio = () => {
                 <Nav />
             </header>
 
-            <main className='main'>
+            <main>
                 <div className='content-project'>
                     <h1 style={{marginTop:'6rem'}}>Mes Projets</h1>
                     <div className="project-container">

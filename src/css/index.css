@@ -14,7 +14,9 @@ body {
   background-attachment: fixed; 
 
 }
-
+ main{
+  height: 100vh;
+ }
 
 h1 {
   text-align: center;
@@ -211,21 +213,22 @@ a:hover {
 
 
 /*------------------------------------------------------ Accueil -------------------------------------------------------- */
-#accueil {
+#accueil{
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   background: linear-gradient(to left, #31688d, #6657a1);
-  color: #fff;
+  color: #88A733;
   text-align: center;
   flex-direction: column;
+} 
+#accueil h1{
+  color: #ffffff;
 }
-
 .accueil-content {
   max-width: 100%;
 }
-
 .acceuil-section {
   height: 100vh;
   width: 100%;
@@ -309,30 +312,7 @@ a:hover {
   }
 }
 
-/* Tablets and larger screens */
-@media (min-width: 768px) {
-  .acceuil-section {
-    width: 32em;
-  }
-}
 
-@media (min-width: 425px) {
-  .acceuil-section {
-    width: 19em;
-  }
-}
-
-@media (min-width: 375px) {
-  .acceuil-section {
-    width: 17em;
-  }
-}
-
-@media (min-width: 320px) {
-  .acceuil-section {
-    width: 15em;
-  }
-}
 
 /* Tablets and larger screens */
 @media (max-width: 768px) {
