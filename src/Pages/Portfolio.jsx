@@ -3,6 +3,7 @@ import Nav from "../Components/Nav";
 import Footer from "../Components/Footer";
 import '../css/index.css'; 
 import { Icon } from '@iconify/react';
+
 const projects = [
     {
         id: 1,
@@ -48,15 +49,21 @@ const projects = [
 ];
 
 const Portfolio = () => {
-  const [selectedProject, setSelectedProject] = useState(null);
+    const [selectedProject, setSelectedProject] = useState(null);
+    const [detailsVisible, setDetailsVisible] = useState(false);
 
-  const handleProjectClick = (project) => {
-    setSelectedProject(project);
-  };
+    const handleProjectClick = (project) => {
+        setSelectedProject(project);
+        setDetailsVisible(true);
+    };
 
-  const openProjectSite = (url) => {
-    window.open(url, '_blank');
-  };
+    const closeDetails = () => {
+        setDetailsVisible(false);
+    };
+
+    const openProjectSite = (url) => {
+        window.open(url, '_blank');
+    };
 
     return (
         <>
@@ -69,17 +76,23 @@ const Portfolio = () => {
                     <h1 style={{marginTop:'6rem'}}>Mes Projets</h1>
                     <div className="project-container">
                         {projects.map((project) => (
-                        <div
-                            key={project.id}
-                            onClick={() => handleProjectClick(project)}
-                            className="project-card">
-                            <img src={project.imageUrl} alt={project.title} />
-                            <h3>{project.title}</h3>
-                        </div>
+                            <div
+                                key={project.id}
+                                onClick={() => handleProjectClick(project)}
+                                className="project-card">
+                                <img src={project.imageUrl} alt={project.title} />
+                                <h3>{project.title}</h3>
+                            </div>
                         ))}
                     </div>
-                    {selectedProject && (
-                        <div className="project-details">
+                    {selectedProject && detailsVisible && (
+                <div className="project-details-overlay">
+                    <div className="project-details">
+                        <button className="close-btn" onClick={closeDetails}>
+                            <Icon name="close-outline" fill="#fff" size="large" />
+                            Close
+                        </button>
+
                         <h2>{selectedProject.title}</h2>
                         <img
                             src={selectedProject.imageUrl}
@@ -88,10 +101,11 @@ const Portfolio = () => {
                         <p>{selectedProject.description}</p>
                         {selectedProject.siteUrl && (
                             <button className='btn-portfolio' onClick={() => openProjectSite(selectedProject.siteUrl)}>
-                            <Icon icon="solar:link-line-duotone" color="black" width="12" /><br />
-                            voir le site
+                                <Icon icon="solar:link-line-duotone" color="black" width="12" /><br />
+                                voir le site
                             </button>
-                        )}
+                                )}
+                            </div>
                         </div>
                     )}
                 </div>
