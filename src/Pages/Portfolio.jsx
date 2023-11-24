@@ -25,7 +25,7 @@ const projects = [
         title: 'Le site sur lequel vous êtes',
         imageUrl: 'media/mon_portfolio_img.jpg',
         description: 'Mon portfolio qui retrace mon parcours ainsi que mes expériences, et compéttences que j\'ai pu acquérir au fil du temps',
-        siteUrl: 'https://portfolio-mbemba-nhora.vercel.app/',
+        siteUrl: 'https://nhora-mbemba-my-resume.vercel.app/',
     },
 
     {
