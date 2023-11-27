@@ -1,76 +1,45 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
-function animateProgressBar(progress) {
-  const targetValue = parseInt(progress.getAttribute('value'));
-  const max = parseInt(progress.getAttribute('max'));
-  const animationDuration = 800;
-  const step = targetValue / (animationDuration / 10);
+function Progress({ value }) {
+  const [currentValue, setCurrentValue] = useState(0);
 
-  let current = 0;
-
-  const animation = setInterval(() => {
-    if (current < targetValue) {
-      current += step;
-      if (current > targetValue) {
-        current = targetValue;
-      }
-      progress.value = current;
-    } else {
-      progress.value = targetValue;
-      clearInterval(animation);
-    }
-  }, 10);
-}
-
-function handleDivHover() {
-  const progressBars = document.querySelectorAll('progress');
-  progressBars.forEach((progress) => {
-    animateProgressBar(progress);
-  });
-}
-
-const competencesData = [
-  {
-    category: 'Front-end',
-    skills: [
-      { label: 'HTML', value: 80 },
-      { label: 'CSS', value: 80 },
-      { label: 'JS', value: 50 },
-    ],
-  },
-  {
-    category: 'Back-end',
-    skills: [
-      { label: 'Symfony', value: 35 },
-      { label: 'PHP', value: 25 },
-    ],
-  },
-  {
-    category: 'Design UI UX',
-    skills: [
-      { label: 'Canva', value: 80 },
-      { label: 'Figma', value: 70 },
-      { label: 'Adobe XD', value: 50 },
-    ],
-  },
-];
-
-function Skills() {
   useEffect(() => {
-    const divContainer = document.getElementById('bar_front');
-    divContainer.addEventListener('mouseenter', handleDivHover);
+    const animationDuration = 800;
+    const step = value / (animationDuration / 10);
+
+    let current = 0;
+
+    const animation = setInterval(() => {
+      if (current < value) {
+        current += step;
+        if (current > value) {
+          current = value;
+        }
+        setCurrentValue(current);
+      } else {
+        setCurrentValue(value);
+        clearInterval(animation);
+      }
+    }, 10);
 
     return () => {
-      divContainer.removeEventListener('mouseenter', handleDivHover);
+      clearInterval(animation);
     };
-  }, []);
+  }, [value]);
 
+  return (
+    <progress max="100" value={currentValue}>
+      {currentValue}%
+    </progress>
+  );
+}
+
+function Skills() {
   return (
     <div className="content_competences" id="competences">
       <div className="competences-section">
         <div className='content'> 
-
-          <div>
+        <div>
             <h2>Expériences</h2>
             <ul>
               <li>Autonomie</li>
@@ -98,7 +67,7 @@ function Skills() {
           </div>
 
           
-      </div>
+        </div>
         <div id="bar_front" className="skill-bars">
           {competencesData.map((categoryData, index) => (
             <div key={index}>
@@ -108,18 +77,16 @@ function Skills() {
               {categoryData.skills.map((skill, skillIndex) => (
                 <React.Fragment key={skillIndex}>
                   <label htmlFor={`file_${index}_${skillIndex}`}>{skill.label}</label>
-                  <progress id={`file_${index}_${skillIndex}`} max="100" value={skill.value}>
-                    {skill.value}%
-                  </progress>
+                  <Progress value={skill.value} />
                 </React.Fragment>
               ))}
             </div>
           ))}
         </div>
         <a href="src\assets\img\ressources\MBEMBA_Nhora_Developpeuse_d'application_multimédia.pdf" download="">
-            <button className="roll-button" type="button">
-              Télécharger mon cv
-            </button>
+          <button className="roll-button" type="button">
+            Télécharger mon cv
+          </button>
         </a>
       </div>
     </div>

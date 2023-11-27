@@ -109,6 +109,7 @@ const Portfolio = () => {
                         </div>
                     )}
                 </div>
+                <p>Voici un petit apperçu des projet que j'ai pu realisée</p>
             </main>
 
             <footer>

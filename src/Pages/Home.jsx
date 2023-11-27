@@ -41,11 +41,6 @@ function Home() {
       </header>
 
       <main>
-      <div id="loading-mask">
-        <div class="loading-img">
-            <img alt="Meghna Preloader" src="img/Pacman.gif" />
-        </div>
-    </div>
         {afficherAccueil ? (
           <div className="content-acc" id="accueil">
             <div className="acceuil-section">

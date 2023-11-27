@@ -4,6 +4,7 @@
   margin: 0;
   box-sizing: border-box;
 }
+
 body {
   font-family: 'Arial', sans-serif;
   margin: 0;
@@ -11,12 +12,13 @@ body {
   background-color: #f7f7f7; 
   background-size: cover; 
   background-repeat: no-repeat;
-  background-attachment: fixed; 
+  background-attachment: fixed;  
 
 }
- main{
+
+main{
   height: 100vh;
- }
+}
 
 /*------------------------------------------------------ NavBar -------------------------------------------------------- */
 
@@ -105,20 +107,22 @@ a:hover {
       
   }
   .menu-toggle {
-      display: block;
-     margin-right: 2rem;
+    display: block;
+    margin-right: 2rem;
   }
 }
 
 /* Mobile  S */
 @media screen and (min-width: 361px) and (max-width: 607px) {
   .navbar {
-      padding: 10px;
+      padding: 0px;
   }
   .menu-toggle {
       display: block;
+      margin-right: 0.5rem;
+    }
   }
-}
+
 
 /* Mobile L*/
 @media screen and (min-width: 668px) and (max-width: 720px) {
@@ -130,9 +134,9 @@ a:hover {
       margin-right: 10rem;
   }
 }
-
+ 
 /* Tablets */
-
+  
 @media (max-width: 768px) {
   .navbar {
     padding: 10px 20px;
@@ -159,10 +163,10 @@ a:hover {
   }
 }
 @media (max-width: 768px){
-  .menu-toggle {
+.menu-toggle {
     display: block;
     cursor: pointer;
-    margin-right: 0.5rem;
+    margin-right: 1.5rem;
 }
 }
 
@@ -173,7 +177,7 @@ a:hover {
 }
 
 
-@media screen and (min-width: 1025px) and (max-width: 1366px) {
+@media screen and (min-width: 1024px) and (max-width: 1366px) {
   .navbar {
       padding: 10px 20px;
   }
@@ -184,6 +188,11 @@ a:hover {
   .navbar {
       padding: 10px 20px;
   }
+  .menu {
+    list-style: none;
+    display: flex;
+    margin-right: 6em;
+}
 }
 
 
@@ -224,16 +233,12 @@ a:hover {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
   transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
   animation: apparitionTexte 3s forwards;
-  background: url('../../public/media/bgv.gif') no-repeat;
+  background: url('../../public/media/bg.gif') no-repeat;
   background-size: cover;
   font-size: 1.5em;
 }
 
-.typed-cursor {
-  display: none; 
-}
 .content_acc {
-  color: #000000;
   text-align: center;
   background-size: cover;
   font-size: 1.5em;
@@ -249,17 +254,19 @@ a:hover {
   text-transform: uppercase;
   border-radius: 3px;
   transition: all 0.3s;
+  margin: 1rem;
 }
 
 .roll-button:hover {
   background-color: gold;
   transform: scale(0.95);
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 30px rgba(248, 248, 248, 0.4);
 }
 
-.text_accueil {
-  color: #f3900ec7;
+#center-align span{
+color: gold;
 }
+
 
 @keyframes apparitionTexte {
   from {
@@ -274,13 +281,14 @@ a:hover {
   .acceuil-section {
     padding: 20px;
     height: 100vh;
-    background-image:url('../../public/media/bgv-tel.gif');
-  }
-
-  .typed-cursor {
-    display: inline-block; 
-  }
-}
+  }}
+  
+  @media (max-width: 320px) {
+.acceuil-section {
+    padding: 20px;
+    height: 100vh;
+    
+}}
 
 
 /*---------------------------------------------------- A propos ------------------------------------------------*/
@@ -342,7 +350,7 @@ a:hover {
 
 .heading-8 {
   font-size: 16px;
-  color: #666;
+  color: goldenrod;
 }
 
 .text-s2 {
@@ -459,12 +467,12 @@ progress::-webkit-progress-value {
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
-  padding: 1rem;
-  transition: all 0.3s ease;
+  padding: 1.5rem;
+  transition: all 0.3s ease; text-align: center;
 }
 .content-project{
   margin-bottom: 1rem;
-  margin-left: 2rem;
+
 }
 
 
@@ -477,7 +485,6 @@ progress::-webkit-progress-value {
   position: relative;
   transition: transform 0.3s ease-in-out;
   text-align: center;
-  color: #e9e9e9;
 }
 .project-card:hover {
   transform: translateY(-5px);
@@ -525,12 +532,12 @@ progress::-webkit-progress-value {
   z-index: 1000;
 }
 .project-details h2 {
-  color: #fffefe;
+  color: #ffffff;
   font-size: 1.8em;
   margin-bottom: 10px;
 }
 .project-details p {
-  color: #333;
+  color: #000000;
   line-height: 1.6;
   padding: 0.5rem;
   background-color: #f0f0f0;
@@ -556,19 +563,7 @@ progress::-webkit-progress-value {
   justify-content: center;
   margin-top: 20px;
 }
-.button-container button {
-  padding: 12px 24px;
-  font-size: 16px;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
-  background-color: #3498db;
-}
-.button-container button:hover {
-  background-color: #217dbb;
-}
+
 
 
 
@@ -582,7 +577,7 @@ progress::-webkit-progress-value {
   background: rgba(0, 0, 0, 0.5);
   justify-content: center;
   align-items: center;
-  backdrop-filter: blur(10px); /* Ajoutez cet effet de flou sur le fond */
+  backdrop-filter: blur(10px); 
 }
 .modal-content {
   max-width: 80%;
@@ -673,8 +668,8 @@ progress::-webkit-progress-value {
   display: flex;
   flex-direction: column;
   justify-content: center;
+
   align-items: center;
-  margin-left: 2rem;
 }
 
 .container {
@@ -732,7 +727,7 @@ textarea:focus {
 }
 
 button {
-  background: gold;
+  background: goldenrod;
   color: #fff;
   border: none;
   padding: 10px;
@@ -742,7 +737,7 @@ button {
 }
 
 button:hover {
-  background: #a04e45;
+  background: gold;
 }
 
 @keyframes fadeIn {
@@ -780,10 +775,12 @@ button:hover {
 
 
 /*------------------------------------------------------ Footer -------------------------------------------------------- */
+
 footer {
+  background-color: #343a40;
+  color: #ffffff;
+  padding: 1rem;
   text-align: center;
-  background-color: #333;
-  padding: 1.5rem;     
   width: 100%;
 }
 
