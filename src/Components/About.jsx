@@ -2,11 +2,11 @@ import React from 'react';
 
 function About() {
   return (
-    <div id="A-Propos-Section" className="section--2">
+    <div className="section--2">
       <div className="container-4">
         <div className="title-section">
           <h1 className="heading-2">
-            <span className="text-span-2">A PROPOS</span>
+            <span className="text-span-2">A PROPOS DE MOI</span>
           </h1>
         </div>
         <div className="containt-s2">
