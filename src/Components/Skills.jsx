@@ -82,12 +82,9 @@ function Skills() {
               ))}
             </div>
           ))}
+         
         </div>
-        <a href="src\assets\img\ressources\MBEMBA_Nhora_Developpeuse_d'application_multimédia.pdf" download="">
-          <button className="roll-button" type="button">
-            Télécharger mon cv
-          </button>
-        </a>
+        
       </div>
     </div>
   );

@@ -101,11 +101,7 @@ function Competences() {
                   <li>Basketball</li>
                 </ul>
               </div>
-              <a href="media/MBEMBA_Nhora_Developpeuse_d'application_multimédia.pdf" download="">
-                <button className="roll-button" type="button">
-                  Télécharger mon cv
-                </button>
-              </a>
+             
             </div>
             <div className='skills'>
               <div id="bar_front" className="skill-bars">
@@ -124,7 +120,11 @@ function Competences() {
                     ))}
                   </div>
                 ))}
-              </div>
+              </div>  <a href="media/MBEMBA_Nhora_Developpeuse_d'application_multimédia.pdf" download="">
+                <button id="btndownl"  className="roll-button" type="button">
+                  Télécharger mon cv
+                </button>
+              </a>
             </div>
           </div>
         </div>

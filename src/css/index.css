@@ -19,7 +19,19 @@ body {
 main{
   height: 100vh;
 }
+h1
+{
+  margin-top: 6rem;
+    text-align: center;
+    padding: 2rem;
+}
 
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #333; 
+}
 /*------------------------------------------------------ NavBar -------------------------------------------------------- */
 
 ul {
@@ -382,20 +394,11 @@ color: gold;
 
 /*------------------------------------------------------ Compétences -------------------------------------------------------- */
 
-h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  text-align: center;
-  color: #333; 
-}
-
-
 li {
   font-size: 1rem;
   margin-bottom: 0.5rem;
   color: #555;
 }
-
 
 .content_competences {
   color: #333; 
@@ -407,15 +410,43 @@ li {
   border-radius: 10px;
 }
 
+.content-skills{
+  margin: 2%;
+  background: #D0D0D0;
+  border-radius: 30px;}
+
+.content-other-skills {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.content-other-skills ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.skills {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .skill-bars {
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
+  width: 70%;
 }
 
 .skill-bars > div {
   flex: 1;
-  margin-right: 1.5rem;
+}
+
+.skills a {
+  display: flex;
+  justify-content: center;
 }
 
 .skill-bars p {
@@ -443,7 +474,6 @@ progress::-webkit-progress-value {
   border-radius: 5px;
 }
 
-
 .roll-button {
   background-color: goldenrod;
   box-shadow: #343434b2 2px 2px 1px;
@@ -459,6 +489,21 @@ progress::-webkit-progress-value {
 
 .roll-button:hover {
   background-color: gold;
+}
+
+
+@media screen and (max-width: 425px){
+ .content-other-skills {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;}
+
+  .content-other-skills ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
 }
 
 
