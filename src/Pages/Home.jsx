@@ -26,7 +26,7 @@ function TypeEffect({ text, speed }) {
 
 function Home() {
   const [afficherAccueil, setAfficherAccueil] = useState(true);
-  const headerText = "MBEMBA Nhora ";
+  const headerText = "  MBEMBA Nhora ";
   const bodyText = "  Conceptrice Développeuse d'Application Junior";
   const speed = 90;
 
