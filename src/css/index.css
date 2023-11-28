@@ -309,9 +309,7 @@ color: gold;
   padding: 20px;
   background-color: #f7f7f7;
   height: 100vh;
-  margin-top: 10rem
-;
-  
+
 }
 
 .section--2  img{
@@ -447,6 +445,7 @@ li {
 .skills a {
   display: flex;
   justify-content: center;
+  text-decoration: none;
 }
 
 .skill-bars p {
@@ -611,9 +610,6 @@ progress::-webkit-progress-value {
   margin-top: 20px;
 }
 
-
-
-
 .modal {
   display: none;
   position: fixed;
@@ -685,8 +681,9 @@ progress::-webkit-progress-value {
   .btn-portfolio {
     width: 100px;
   }
-  #close, .close-btn{
-      margin-left: 56em;
+  
+  #close, .close-btn {
+      margin-left: 108em;
   }
   .content-project {
     margin-bottom: 1rem;
@@ -705,8 +702,9 @@ progress::-webkit-progress-value {
 }
 
 @media (min-width: 1440px){
-#close, .close-btn {
-    margin-left: 82em;}
+ .close-btn {
+    margin-left: 56em;
+}
 }
 /*------------------------------------------------------ Formulaire -------------------------------------------------------- */
 
