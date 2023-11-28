@@ -10,20 +10,54 @@ function Form() {
     message: '',
   });
 
+  // État local pour gérer les erreurs de validation
+  const [formErrors, setFormErrors] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
+
   // Fonction appelée lors de la soumission du formulaire
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    // Vérifier si tous les champs sont remplis
+    if (!formData.name || !formData.email || !formData.message) {
+      setFormErrors({
+        ...formErrors,
+        name: formData.name ? '' : 'Le champ nom est requis.',
+        email: formData.email ? '' : 'Le champ email est requis.',
+        message: formData.message ? '' : 'Le champ message est requis.',
+      });
+      return;
+    }
+
+    // Vérifier si l'adresse e-mail est valide
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      setFormErrors({
+        ...formErrors,
+        email: 'Veuillez saisir une adresse e-mail valide.',
+      });
+      return;
+    }
 
     // Affichez l'alerte avec le message de confirmation
     alert('Votre message a bien été envoyé!');
 
     // Réinitialisez le formulaire après la soumission réussie si nécessaire
-    // setFormData({
-    //   name: '',
-    //   email: '',
-    //   message: '',
-    // });
+    setFormData({
+      name: '',
+      email: '',
+      message: '',
+    });
+
+    // Réinitialisez les erreurs
+    setFormErrors({
+      name: '',
+      email: '',
+      message: '',
+    });
   };
 
   // Rendu du composant Form
@@ -42,6 +76,7 @@ function Form() {
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
             required
           />
+          <span className="error">{formErrors.name}</span>
 
           {/* Champ de saisie pour l'email */}
           <label htmlFor="email">Email* :</label>
@@ -53,6 +88,7 @@ function Form() {
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
             required
           />
+          <span className="error">{formErrors.email}</span>
 
           {/* Champ de saisie pour le message (textarea) */}
           <label htmlFor="message">Message* :</label>
@@ -64,6 +100,7 @@ function Form() {
             onChange={(e) => setFormData({ ...formData, message: e.target.value })}
             required
           ></textarea>
+          <span className="error">{formErrors.message}</span>
 
           {/* Bouton de soumission du formulaire */}
           <button type="submit">Envoyer</button>
